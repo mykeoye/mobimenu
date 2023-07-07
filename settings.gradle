@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    plugins {
+        id "${quarkusPluginId}" version "${quarkusPluginVersion}"
+    }
+}
+rootProject.name='mobimenu-core'
+
+include 'app'
+include 'domain'
+include 'core:ports', 'core:services'
+include 'common'
+include 'adapter:persistence:mongodb'
+include 'adapter:web'
+include 'adapter:payment'
+include 'adapter:storage'
+include 'adapter:events'

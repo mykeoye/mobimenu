@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+    id 'org.kordamp.gradle.jandex' version '0.11.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'io.mobimenu'
+version '1.0.0-SNAPSHOT'
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-arc'
+    implementation 'io.quarkus:quarkus-vertx'
+    implementation 'io.quarkus:quarkus-smallrye-openapi'
+    implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
+    implementation 'io.quarkus:quarkus-resteasy-reactive'
+    implementation 'io.quarkus:quarkus-hibernate-validator'
+    implementation 'io.quarkus:quarkus-smallrye-jwt'
+    implementation 'io.quarkus:quarkus-smallrye-jwt-build'
+    implementation 'io.quarkus:quarkus-smallrye-context-propagation'
+    implementation 'org.apache.logging.log4j:log4j:2.17.1'
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+
+    implementation project(':common')
+    implementation project(':domain')
+    implementation project(':core:ports')
+    implementation project(':core:services')
+    implementation project(':adapter:persistence:mongodb')
+    implementation project(':adapter:payment')
+    implementation project(':adapter:storage')
+    implementation project(':adapter:events')
+
+    testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation 'io.quarkus:quarkus-test-mongodb'
+}
+
+test {
+    useJUnitPlatform()
+}
