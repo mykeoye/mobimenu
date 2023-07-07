@@ -2,10 +2,10 @@
 
 Mobimenu is a platform that provides a digital operating system for food businesses. It does so through the
 use of Qr code technology to efficiently manage interactions with customers, providing businesses with digitized,
-intuitive and menus, inventory management, accounting and a host of other tools they need to succeed.
+and intuitive menus, inventory management, customer-engagement, accounting and a host of other tools they need to succeed.
 
 This is the core backend service which drives the entire platform. It is built with Java and the Quarkus framework,
-and leverages the reactive toolkit `small-rye` which is built on the principles of Reactive streams.
+and leverages the reactive toolkit `small-rye mutiny`[https://smallrye.io/smallrye-mutiny/2.3.1/] which is built on the principles of Reactive streams.
 
 ## How to build
 
